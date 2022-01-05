@@ -346,7 +346,7 @@ if ($.isNode()) {
 				
 				await notify.sendNotify(`${$.name}`, `${allMessage}`, {
 					url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean`
-				}, '\n\n本通知 By ccwav Mod',TempMessage)
+				}, '\n\n仅供用于学习',TempMessage)
 			}
 			if ($.isNode() && allMessageMonth) {
 				await notify.sendNotify(`京东月资产变动`, `${allMessageMonth}`, {
