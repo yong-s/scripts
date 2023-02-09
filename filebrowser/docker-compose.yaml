@@ -1,0 +1,19 @@
+version: '3.3' 
+services:     
+    filebrowser:  
+        image: filebrowser/filebrowser
+        container_name: filebrowser
+        volumes:  
+            - /media:/srv           
+            - ./database/filebrowser.db:/database/filebrowser.db 
+            - ./settings.json:/config/settings.json
+            - /etc/timezone:/etc/timezone    #时区 cst
+            - /etc/localtime:/etc/localtime  #时区 cst
+
+        environment:
+            - PUID=1002
+            - PGID=100
+              # - TZ=Asia/Shanghai
+        ports: 
+            - '8081:80'         
+        restart: always

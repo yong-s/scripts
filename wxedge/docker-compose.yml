@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+    wxedge:
+        container_name: wxedge
+        restart: always
+        privileged: true
+        network_mode: host
+        tmpfs: 
+            - /run
+            - /tmp
+        volumes:
+            - '/media/data/wxedge:/storage:rw'
+        image: onething1/wxedge

@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+    ttnode:
+        volumes:
+            - '/mnt/data/ttnode:/mnt/data/ttnode'
+            # - '/var/run/docker.sock:/var/run/docker.sock'
+        container_name: ttnode
+        network_mode: host
+        hostname: ttnode
+        restart: always
+        image: 'tiptime/ttnode:latest'
+        deploy:
+          resources:
+            limits:
+              cpus: '1.5'
+              memory: 1g
+        environment:
+          - TZ=Asia/Shanghai
